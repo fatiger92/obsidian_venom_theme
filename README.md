@@ -28,15 +28,15 @@ But if you wanna change a specific background image, you can use your own links 
 - Icon Folder
 - Day Planner
 - Emoji Toolbar
-- MAKE.md
 - LanguageTool
+- Folder Note (New)
 - Smart Typography
+- Zoottekeeper Plugin (New)
 - Better footnote
 - Table Generator
-- Importer
 - Link Embed
 - Duplicate Line
-- SupSub
+- Supsub
 
 
 ## Recommended Fonts
