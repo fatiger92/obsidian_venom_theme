@@ -66,13 +66,13 @@
     --venom_dark_navy: #0C1520;
     --venom_navy: #1E303A;
     --venom_gray: #8E9599;
-    --venom_white: #EBDEDB;
+    --venom_white: #FFF;
     --venom_dark_red: #752126;
     --venom_pink: #B13D4C;
     --venom_purple: #7F01FE;
   
     --text-title-h1: var(--red);
-    --text-title-h2: var(--orange);
+    --text-title-h2: #FF8126;
     --text-title-h3: var(--yellow);
     --text-title-h4: lightgreen;
     --text-title-h5: skyblue;
@@ -168,7 +168,6 @@
     animation: fadein 1s;
     -moz-animation: fadein 1s; /* Firefox */
     -webkit-animation: fadein 1s; /* Safari and Chrome */
-    -o-animation: fadein 1s; /* Opera */
   }
 
   .progress-bar-line {
@@ -190,7 +189,6 @@
   }
 
   /* fade in animation */
-
   @keyframes fadein {
     from {
         opacity: 0;
@@ -215,13 +213,99 @@
         opacity: 0.8;
     }
   }
-  @-o-keyframes fadein { /* Opera */
+
+  /* view-header-title */  
+  .view-header-title {
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  /* Glowing Text animation */
+  @keyframes glow {
     from {
-        opacity: 0;
+      color: #fff;
+      text-shadow: 0 0 2px var(--venom_white),
+        0 0 2px var(--venom_white),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple);
     }
     to {
-        opacity: 0.8;
+      color: var(--venom_dark_navy);
+      font-weight: bold;
+      text-shadow: 0 0 2px var(--venom_purple),
+        0 0 2px var(--venom_purple),
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff;
     }
+  }
+  @-moz-keyframes glow {
+    from {
+      color: #fff;
+      text-shadow: 0 0 2px var(--venom_white),
+        0 0 2px var(--venom_white),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple);
+    }
+    to {
+      color: var(--venom_dark_navy);
+      font-weight: bold;
+      text-shadow: 0 0 2px var(--venom_purple),
+        0 0 2px var(--venom_purple),
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff;
+    }
+  }
+  @-webkit-keyframes glow {
+    from {
+      color: #fff;
+      text-shadow: 0 0 2px var(--venom_white),
+        0 0 2px var(--venom_white),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple),
+        0 0 3px var(--venom_purple);
+    }
+    to {
+      color: var(--venom_dark_navy);
+      font-weight: bold;
+      text-shadow: 0 0 2px var(--venom_purple),
+        0 0 2px var(--venom_purple),
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff,
+        0 0 3px #fff;
+    }
+  }
+
+  /* Strike */
+
+  .cm-strikethrough {
+    color: var(--red);
+  }
+
+  /* Highlight */
+
+  .cm-s-obsidian span.cm-highlight {
+    background-color: var(--venom_white);
+    color: var(--venom_purple);
+    font-weight: bold;
+    font-size: 20px;
   }
 
   /* End of Addition */
@@ -374,7 +458,6 @@
   }
   
   /* status bar */
-  
   .status-bar, .side-dock.mod-right, .side-dock.mod-left {
     border-color: var(--venom_pink);
     border-width: 1px;
@@ -543,7 +626,9 @@
   
   /* little change */
   .cm-s-obsidian span.cm-inline-code, code {
-    color: var(--venom_pink);
+    background-color: var(--venom_purple);
+    color: var(--venom_white);
+    font-weight: bold;
     font-size: 12pt;
   }
   
@@ -592,6 +677,56 @@
     background-color: var(--venom_purple);
   }
   
+  /* Main view */
+  .workspace-tab-header {
+   margin-right: 10px !important;
+  }
+
+  .workspace-tab-header-inner {
+    margin: auto;
+    padding: auto;
+  }
+  
+  /* Main view mouse over */
+  .workspace-tab-header:hover,
+  .workspace-tab-header-inner:hover {
+    background-color: var(--venom_purple);
+    color: var(--venom_white);
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .workspace-tab-header-container-inner {
+    margin: calc(var(--tab-outline-width) * 3) -7px calc(var(--tab-outline-width) * 3);
+  }
+
+  .workspace-tab-header.is-active {
+    background-color: var(--venom_purple);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: none;
+    font-weight: bold;
+  }
+
+  .workspace-tab-header::before,
+  .workspace-tab-header::after {
+    display: none;
+  }
+
+  /* Left-side Icons */
+  .clickable-icon:hover {
+    background-color: var(--venom_purple) !important;
+  }
+
+  .mod-left-split .workspace-tab-header.is-active {
+    background-color: var(--venom_purple);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: none;
+    font-weight: bold;
+  }
+
+  /* Left-side file and folder list, mouse over */
   body:not(.is-grabbing) .nav-file-title:hover,
   body:not(.is-grabbing) .nav-folder-title:hover {
     background-color: var(--venom_purple) !important;
@@ -603,7 +738,7 @@
     inset -1px 0 2px var(--venom_dark_navy),  /* inside */
     inset 1px 0 2px var(--venom_navy); /* outside */
   }
-  
+   
   body:not(.is-grabbing) .nav-file-title.is-selected:hover {
     background-color: var(--nav-item-background-active);
   }
@@ -613,13 +748,39 @@
     display: none;
   }
   
-  
   .nav-file-title.is-selected {
     background-color: var(--nav-item-background-active);
   }
   
   .nav-file-title.is-selected:hover {
     background-color: red;
+  }
+
+  /* Selected file and folder */
+  .tree-item-self.is-clickable.nav-file-title.is-active,
+  .workspace-leaf.mod-active .tree-item-self.has-focus {
+    
+    background-color: var(--venom_purple);
+    font-weight: bold;
+    border-radius: 10px;
+    border-color: var(--venom_white);
+
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+  }
+
+  .nav-file-title-content, .nav-folder-title-content {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  /* tooltip */
+
+  .tooltip {
+    background-color: var(--venom_white);
+    color: var(--venom_purple);
   }
 
   .collapse-icon svg.svg-icon,
